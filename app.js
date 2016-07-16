@@ -13,24 +13,24 @@ Counter.prototype.click = function(button) {
  
   if(this.clicksNumber < this.clicksLimit) {
 
-    button.style.backgroundColor = "blue";
+    // button.style.backgroundColor = "blue";
     button.nextSibling.innerHTML = this.clicksNumber;
     
     // HTML5 methods for adding, removing classes
-    button.classList.remove('switch-non-active');
-    button.classList.add('switch-active');
+    button.classList.remove('counter-non-active');
+    button.classList.add('counter-active');
     // console.log('Limit: ' + this.clicksLimit + ', clicks: ' + this.clicksNumber);
 
   } else if(this.clicksNumber === this.clicksLimit) {
   
-    button.style.backgroundColor = "red";
+    // button.style.backgroundColor = "red";
     button.innerText = 'NO MORE!';
     button.disabled = true;
     button.nextSibling.innerHTML = this.clicksLimit;
     
     // HTML5 methods for adding, removing classes
-    button.classList.remove('switch-active');
-    button.classList.add('switch-disabled');
+    button.classList.remove('counter-active');
+    button.classList.add('counter-disabled');
     // console.log('Limit: ' + this.clicksLimit + ', clicks: ' + this.clicksNumber);
   
   }
@@ -58,14 +58,35 @@ resetButton.addEventListener('click', function() {
   secondCounter.clicksNumber = 0;
   thirdCounter.clicksNumber = 0; 
 
-  // Reset of default color
-  firstButton.style.backgroundColor = "yellow"; 
-  secondButton.style.backgroundColor = "yellow"; 
-  thirdButton.style.backgroundColor = "yellow";
+  // Buttons from disabled to non active state
+  firstButton.classList.remove('counter-disabled');
+  firstButton.classList.add('counter-non-active');
 
-  firstButton.style.color = "black"; 
-  secondButton.style.color = "black"; 
-  thirdButton.style.color = "black";
+  secondButton.classList.remove('counter-disabled');
+  secondButton.classList.add('counter-non-active');
+
+  thirdButton.classList.remove('counter-disabled');
+  thirdButton.classList.add('counter-non-active');
+
+  // Buttons from active to non-active state;
+  firstButton.classList.remove('counter-active');
+  firstButton.classList.add('counter-non-active');
+
+  secondButton.classList.remove('counter-active');
+  secondButton.classList.add('counter-non-active');
+
+  thirdButton.classList.remove('counter-active');
+  thirdButton.classList.add('counter-non-active');
+
+  // // Reset of default color
+  // firstButton.style.backgroundColor = "yellow"; 
+  // secondButton.style.backgroundColor = "yellow"; 
+  // thirdButton.style.backgroundColor = "yellow";
+
+  // // Reset of default text style
+  // firstButton.style.color = "black"; 
+  // secondButton.style.color = "black"; 
+  // thirdButton.style.color = "black";
 
   // Reset of buttons to be active 
   firstButton.disabled = false; 

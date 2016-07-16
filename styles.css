@@ -1,4 +1,4 @@
-.layout {
+.layout-btn {
   display: block;
 }
 
@@ -24,17 +24,19 @@
   margin-left: 10px;
 }
 
-.switch-non-active {
+.counter-non-active {
   background-color: yellow;
   color: black;
+  text-transform: capitalize;
 }
 
-.switch-active {
+.counter-active {
   background-color: blue;
   color: white;
+  text-transform: capitalize;
 }
 
-.switch-disabled {
+.counter-disabled {
   background-color: red;
   color: white;
   text-transform: uppercase;
