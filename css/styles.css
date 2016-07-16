@@ -3,12 +3,12 @@
 }
 
 .setup {
-  border: 1px solid;
-  border-radius: 4px;
-  display: inline;
   margin-bottom: 5px;
+  display: inline;
   margin-left: 10px;
   padding: 10px;
+  border: 1px solid;
+  border-radius: 4px;
   text-transform: capitalize;
 } 
 
@@ -26,12 +26,14 @@
 
 .counter-non-active {
   background-color: yellow;
-  color: black; 
+  color: black;
+  text-transform: capitalize;
 }
 
 .counter-active {
   background-color: blue;
   color: white;
+  text-transform: capitalize;
 }
 
 .counter-disabled {

@@ -16,7 +16,7 @@ Counter.prototype.click = function(button) {
     // button.style.backgroundColor = "blue";
     button.nextSibling.innerHTML = this.clicksNumber;
     
-    // HTML5 methods for adding, removing classes
+    // HTML5 methods for adding, removing classes, may not work in older browsers
     button.classList.remove('counter-non-active');
     button.classList.add('counter-active');
     // console.log('Limit: ' + this.clicksLimit + ', clicks: ' + this.clicksNumber);
@@ -49,7 +49,7 @@ thirdButton.addEventListener('click', function() { thirdCounter.click(thirdButto
 var resetButton = document.getElementById('reset-button');     
 resetButton.addEventListener('click', function() {   
 
-  // Reset of click limit values
+  // Reset of click limit and number of clicks received
   firstCounter.clicksLimit = 10; 
   secondCounter.clicksLimit = 15;
   thirdCounter.clicksLimit = 1; 
@@ -77,16 +77,6 @@ resetButton.addEventListener('click', function() {
 
   thirdButton.classList.remove('counter-active');
   thirdButton.classList.add('counter-non-active');
-
-  // // Reset of default color
-  // firstButton.style.backgroundColor = "yellow"; 
-  // secondButton.style.backgroundColor = "yellow"; 
-  // thirdButton.style.backgroundColor = "yellow";
-
-  // // Reset of default text style
-  // firstButton.style.color = "black"; 
-  // secondButton.style.color = "black"; 
-  // thirdButton.style.color = "black";
 
   // Reset of buttons to be active 
   firstButton.disabled = false; 
