@@ -1,7 +1,6 @@
 function Counter(clicksLimit) {
   this.clicksLimit = clicksLimit;
-  //this.color = "yellow"; 
-  // console.log(this.clicked); // to be commented out
+  this.clicksNumber = 0;
 };
 
 var firstCounter = new Counter(10);
@@ -9,33 +8,23 @@ var secondCounter = new Counter(15);
 var thirdCounter = new Counter(1);
 
 Counter.prototype.click = function(button) {
-  
-  // Color check and change
-  if(this.clicksLimit > 1) {
+ 
+  this.clicksNumber++;
+ 
+  if(this.clicksNumber < this.clicksLimit) {
+
     button.style.backgroundColor = "blue";
-  } else if(this.clicksLimit <= 1) {
+    button.nextSibling.innerHTML = this.clicksNumber;
+    console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
+
+  } else if(this.clicksNumber === this.clicksLimit) {
+  
     button.style.backgroundColor = "red";
-    button.disabled = true;    
+    button.disabled = true;
+    button.nextSibling.innerHTML = this.clicksLimit;
+    console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
+  
   }
-
-  // Click limit counter
-  if(this.clicksLimit >= 1 ) {
-    this.clicksLimit--;
-    console.log('Limit now is: ' + this.clicksLimit);
-  } else if (this.clicksLimit === 0) {
-    this.clicksLimit = 0;
-    console.log('Limit now is ZERO: ' + this.clicksLimit);
-  }
-};
-
-Counter.prototype.reset = function() {
-  firstCounter.clicksLimit = 10; 
-  secondCounter.clicksLimit = 15;
-  thirdCounter.clicksLimit = 1; 
-
-  firstButton.style.backgroundColor = "yellow"; 
-  secondButton.style.backgroundColor = "yellow"; 
-  thirdButton.style.backgroundColor = "yellow"; 
 };
 
 // Event Listeners for all buttons
@@ -50,17 +39,29 @@ thirdButton.addEventListener('click', function() { thirdCounter.click(thirdButto
 
 var resetButton = document.getElementById('reset-button');     
 resetButton.addEventListener('click', function() {   
-  
+
+  // Reset of click limit values
   firstCounter.clicksLimit = 10; 
   secondCounter.clicksLimit = 15;
   thirdCounter.clicksLimit = 1; 
 
+  firstCounter.clicksNumber = 0; 
+  secondCounter.clicksNumber = 0;
+  thirdCounter.clicksNumber = 0; 
+
+  // Reset of default color
   firstButton.style.backgroundColor = "yellow"; 
   secondButton.style.backgroundColor = "yellow"; 
   thirdButton.style.backgroundColor = "yellow";
 
+  // Reset of buttons to be active 
   firstButton.disabled = false; 
   secondButton.disabled = false; 
   thirdButton.disabled = false;  
+
+  // Reset to remove counter values
+  firstButton.nextSibling.innerHTML = '';
+  secondButton.nextSibling.innerHTML = '';
+  thirdButton.nextSibling.innerHTML = '';
 
 }, false);
