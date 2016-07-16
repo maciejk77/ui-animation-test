@@ -13,7 +13,6 @@ Counter.prototype.click = function(button) {
  
   if(this.clicksNumber < this.clicksLimit) {
 
-    // button.style.backgroundColor = "blue";
     button.nextSibling.innerHTML = this.clicksNumber;
     
     // HTML5 methods for adding, removing classes, may not work in older browsers
@@ -23,7 +22,6 @@ Counter.prototype.click = function(button) {
 
   } else if(this.clicksNumber === this.clicksLimit) {
   
-    // button.style.backgroundColor = "red";
     button.innerText = 'NO MORE!';
     button.disabled = true;
     button.nextSibling.innerHTML = this.clicksLimit;

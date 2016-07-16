@@ -1,0 +1,26 @@
+{
+  "name": "sass-js-coding-test",
+  "version": "1.0.0",
+  "description": "The purpose of this exercise is to create **Sass** file which will output **CSS** as specfied in attached pdf file. Another exercise is to create a few buttons which will display count, change colour and styling depending on their state (again look at attached pdf for complete instruction)",
+  "main": "app.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciejk77/sass-js-coding-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maciejk77/sass-js-coding-test/issues"
+  },
+  "homepage": "https://github.com/maciejk77/sass-js-coding-test#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

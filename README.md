@@ -1,18 +1,14 @@
 #Vanilla Javascript and Sass
 
-The purpose of this exercise is to create **Sass** file which will output **CSS** as specfied in attached pdf file. Another exercise is to create a few buttons which will display count, change colour and styling depending on their state (again look at attached pdf for complete instruction)
+The purpose of this exercise is to create **Sass** file which will output **CSS** as specfied in attached pdf file. Another exercise is to create a few buttons which will display count, change colour and style depending on their state (again look at attached pdf for complete instruction).
 
 ##Instruction
 
 - Clone this repo ```git clone``` and check into the folder 
+- Run ```npm install``` to download dependencies (gulp)
 - Run ```open index.html``` for Mac or ```start index.html``` for Win to see JS app
-- Run ```git watch``` to see Sass file compiled to CSS
-
-###The goal is to end up with (key learnings):
-
-- foo
-- bar
-- baz
+- Delete file css/item-list.css and run ```gulp watch```  
+- Check CSS folder for Sass file being compiled to CSS
 
 ####Preview
 
