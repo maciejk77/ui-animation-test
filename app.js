@@ -13,6 +13,7 @@ Counter.prototype.click = function(button) {
  
   if(this.clicksNumber < this.clicksLimit) {
 
+    //nextSibling used as a shorthand only, should be targetted by class/id getElementBy etc.
     button.nextSibling.innerHTML = this.clicksNumber;
     
     // HTML5 methods for adding, removing classes, may not work in older browsers
