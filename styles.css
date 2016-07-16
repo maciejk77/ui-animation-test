@@ -1,23 +1,41 @@
-button#first-button,
-button#second-button,
-button#third-button {
-  background-color: yellow;
-  color: black;
+.layout {
+  display: block;
+}
+
+.setup {
   margin-bottom: 5px;
+  display: inline;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 4px;
+  text-transform: capitalize;
 } 
 
-button#reset-button {
+#reset-button {
   background-color: white;
 }
 
-/*#first-counter,
+#first-counter,
 #second-counter,
-#third-counter {
-  float: left;
-}*/
+#third-counter,
+#reset-button {
+  display: inline;
+  margin-left: 10px;
+}
 
-.non-active {}
+.non-active {
+  background-color: yellow;
+  color: black;
+}
 
-.active {}
+.active {
+  background-color: blue;
+  color: white;
+}
 
-.disabled {}
+.disabled {
+  background-color: red;
+  color: white;
+  text-transform: uppercase;
+}

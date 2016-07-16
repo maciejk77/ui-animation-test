@@ -15,14 +15,14 @@ Counter.prototype.click = function(button) {
 
     button.style.backgroundColor = "blue";
     button.nextSibling.innerHTML = this.clicksNumber;
-    console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
+    // console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
 
   } else if(this.clicksNumber === this.clicksLimit) {
   
     button.style.backgroundColor = "red";
     button.disabled = true;
     button.nextSibling.innerHTML = this.clicksLimit;
-    console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
+    // console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
   
   }
 };
