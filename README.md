@@ -1,8 +1,8 @@
 #Vanilla Javascript and Sass
 
-####The purpose of this exercise is to create **Sass** file which will output **CSS** as specfied in attached pdf file. Another exercise is to create a few buttons which will display count, change colour and styling depending on their state (again look at attached pdf for complete instruction)
+The purpose of this exercise is to create **Sass** file which will output **CSS** as specfied in attached pdf file. Another exercise is to create a few buttons which will display count, change colour and styling depending on their state (again look at attached pdf for complete instruction)
 
-#####Switch branches to see the following JS patters:
+#####Exercises
 
 - Sass to CSS compiling exercise
 - Vanilla JS exercise
@@ -19,4 +19,4 @@ Run ```git watch``` to see Sass file compiled to CSS
 
 ####Preview
 
-![sass-js-coding-test screenshot](https://raw.githubusercontent.com/maciejk77/modular-js/master/screenshot.png)
+![sass-js-coding-test screenshot](https://github.com/maciejk77/sass-js-coding-test/blob/master/doc/screenshot.png?raw=true)
