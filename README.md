@@ -2,10 +2,7 @@
 
 The purpose of this exercise is to create **Sass** file which will output **CSS** as specfied in attached pdf file. Another exercise is to create a few buttons which will display count, change colour and styling depending on their state (again look at attached pdf for complete instruction)
 
-##Exercises
-
-- Sass to CSS compiling exercise
-- Vanilla JS exercise
+##Instruction
 
 - Clone this repo ```git clone``` and check into the folder 
 - Run ```open index.html``` for Mac or ```start index.html``` for Win to see JS app
