@@ -7,7 +7,7 @@ The purpose of this exercise is to create **Sass** file which will output **CSS*
 - Clone this repo ```git clone``` and check into the folder 
 - Run ```npm install``` to download dependencies (gulp)
 - Run ```open index.html``` for Mac or ```start index.html``` for Win to see JS app
-- Delete file css/item-list.css and run ```gulp watch```  
+- Delete file **css/item-list.css** and run ```gulp watch```  
 - Check CSS folder for Sass file being compiled to CSS
 
 ####Preview
