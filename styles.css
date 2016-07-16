@@ -1,3 +1,9 @@
-button {
+button#first-button,
+button#second-button,
+button#third-button {
   background-color: yellow;
 } 
+
+button#reset-button {
+  background-color: white;
+}
