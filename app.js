@@ -15,14 +15,23 @@ Counter.prototype.click = function(button) {
 
     button.style.backgroundColor = "blue";
     button.nextSibling.innerHTML = this.clicksNumber;
-    // console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
+    
+    // HTML5 methods for adding, removing classes
+    button.classList.remove('switch-non-active');
+    button.classList.add('switch-active');
+    // console.log('Limit: ' + this.clicksLimit + ', clicks: ' + this.clicksNumber);
 
   } else if(this.clicksNumber === this.clicksLimit) {
   
     button.style.backgroundColor = "red";
+    button.innerText = 'NO MORE!';
     button.disabled = true;
     button.nextSibling.innerHTML = this.clicksLimit;
-    // console.log('Limit: ' + this.clicksLimit + ' number of clicks: ' + this.clicksNumber);
+    
+    // HTML5 methods for adding, removing classes
+    button.classList.remove('switch-active');
+    button.classList.add('switch-disabled');
+    // console.log('Limit: ' + this.clicksLimit + ', clicks: ' + this.clicksNumber);
   
   }
 };
@@ -54,6 +63,10 @@ resetButton.addEventListener('click', function() {
   secondButton.style.backgroundColor = "yellow"; 
   thirdButton.style.backgroundColor = "yellow";
 
+  firstButton.style.color = "black"; 
+  secondButton.style.color = "black"; 
+  thirdButton.style.color = "black";
+
   // Reset of buttons to be active 
   firstButton.disabled = false; 
   secondButton.disabled = false; 
@@ -63,5 +76,9 @@ resetButton.addEventListener('click', function() {
   firstButton.nextSibling.innerHTML = '';
   secondButton.nextSibling.innerHTML = '';
   thirdButton.nextSibling.innerHTML = '';
+
+  firstButton.innerText = 'Click me';
+  secondButton.innerText = 'Click me';
+  thirdButton.innerText = 'Click me';
 
 }, false);

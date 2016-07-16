@@ -24,17 +24,17 @@
   margin-left: 10px;
 }
 
-.non-active {
+.switch-non-active {
   background-color: yellow;
   color: black;
 }
 
-.active {
+.switch-active {
   background-color: blue;
   color: white;
 }
 
-.disabled {
+.switch-disabled {
   background-color: red;
   color: white;
   text-transform: uppercase;
