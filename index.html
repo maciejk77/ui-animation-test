@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -8,19 +9,22 @@
 
 <body>
   <div class="layout-btn">
-    <button id="first-button" class="setup counter-non-active">click me</button><div id="first-counter"></div>
+    <button class="js-button button" data-limit="10">click me</button>
+    <span class="js-display display"></span>
   </div>
 
   <div class="layout-btn">
-    <button id="second-button" class="setup counter-non-active">click me</button><div id="second-counter"></div>
+    <button class="js-button button" data-limit="15">click me</button>
+    <span class="js-display display"></span>
   </div>
 
   <div class="layout-btn">
-    <button id="third-button" class="setup counter-non-active">click me</button><div id="third-counter"></div>
+    <button class="js-button button" data-limit="1">click me</button>
+    <span class="js-display display"></span>
   </div>
 
   <div class="layout-btn">
-    <button id="reset-button" class="setup">reset</button>
+    <button class="js-reset button reset-button">reset</button>
   </div>
   <script src="app.js"></script>
 </body>

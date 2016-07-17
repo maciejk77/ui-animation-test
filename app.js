@@ -1,94 +1,64 @@
-function Counter(clicksLimit) {
-  this.clicksLimit = clicksLimit;
-  this.clicksNumber = 0;
-};
-
-var firstCounter = new Counter(10);
-var secondCounter = new Counter(15);
-var thirdCounter = new Counter(1);
-
-Counter.prototype.click = function(button) {
- 
-  this.clicksNumber++;
- 
-  if(this.clicksNumber < this.clicksLimit) {
-
-    //nextSibling used as a shorthand only, should be targetted by class/id getElementBy etc.
-    button.nextSibling.innerHTML = this.clicksNumber;
-    
-    // HTML5 methods for adding, removing classes, may not work in older browsers
-    button.classList.remove('counter-non-active');
-    button.classList.add('counter-active');
-    // console.log('Limit: ' + this.clicksLimit + ', clicks: ' + this.clicksNumber);
-
-  } else if(this.clicksNumber === this.clicksLimit) {
+function clickCallback() {
   
-    button.innerText = 'NO MORE!';
-    button.disabled = true;
-    button.nextSibling.innerHTML = this.clicksLimit;
+  if (this.clickCounter < this.clickLimit) {
     
-    // HTML5 methods for adding, removing classes
-    button.classList.remove('counter-active');
-    button.classList.add('counter-disabled');
-    // console.log('Limit: ' + this.clicksLimit + ', clicks: ' + this.clicksNumber);
-  
+    this.clickCounter++;
+    this.classList.add("counter-active");
+
+    // Assuming there will be 1 display element for each button, in the right order in the DOM;
+    displays[this.buttonIndex].innerText = this.clickCounter;
+
+    if (this.clickCounter === this.clickLimit) {
+      this.disabled = true;
+      this.innerText = "NO MORE!";
+    }
+
   }
+
 };
 
-// Event Listeners for all buttons
-var firstButton = document.getElementById('first-button');     
-firstButton.addEventListener('click', function() { firstCounter.click(firstButton) }, false); 
+function resetCallback() {
 
-var secondButton = document.getElementById('second-button');     
-secondButton.addEventListener('click', function() { secondCounter.click(secondButton) }, false); 
+  // Reset all buttons
+  buttons.forEach(function (button) {
+    button.disabled = false;
+    button.clickCounter = 0;
+    button.classList.remove("counter-active");
+    button.innerText = button.defaultText;
+  });
 
-var thirdButton = document.getElementById('third-button');     
-thirdButton.addEventListener('click', function() { thirdCounter.click(thirdButton) }, false); 
+  // Reset all displays
+  displays.forEach(function (display) {
+    display.innerText = "";
+  });
 
-var resetButton = document.getElementById('reset-button');     
-resetButton.addEventListener('click', function() {   
+}
 
-  // Reset of click limit and number of clicks received
-  firstCounter.clicksLimit = 10; 
-  secondCounter.clicksLimit = 15;
-  thirdCounter.clicksLimit = 1; 
+// Get references to all DOM elements
+var buttons = document.querySelectorAll(".js-button");
+var displays = document.querySelectorAll(".js-display");
+var reset = document.querySelector(".js-reset");
 
-  firstCounter.clicksNumber = 0; 
-  secondCounter.clicksNumber = 0;
-  thirdCounter.clicksNumber = 0; 
+// Iterate through list of buttons and initialise them with the needed values
+buttons.forEach(function (button, index) {
 
-  // Buttons from disabled to non active state
-  firstButton.classList.remove('counter-disabled');
-  firstButton.classList.add('counter-non-active');
+  // Index of this button in the list of buttons to be saved as a custom property in the button object
+  button.buttonIndex = index;
 
-  secondButton.classList.remove('counter-disabled');
-  secondButton.classList.add('counter-non-active');
+  // Original text shown in the button (Click Me) to be used later when resetting the button
+  button.defaultText = button.innerText; 
+  
+  // Initial click counter value
+  button.clickCounter = 0;
 
-  thirdButton.classList.remove('counter-disabled');
-  thirdButton.classList.add('counter-non-active');
+  // Get the limit for this button from a custom data attribute in the button markup
+  button.clickLimit = parseInt(button.getAttribute("data-limit"));
 
-  // Buttons from active to non-active state;
-  firstButton.classList.remove('counter-active');
-  firstButton.classList.add('counter-non-active');
+  // Bind the clickCallback to the button click event
+  button.addEventListener('click', clickCallback, false); 
 
-  secondButton.classList.remove('counter-active');
-  secondButton.classList.add('counter-non-active');
+});
 
-  thirdButton.classList.remove('counter-active');
-  thirdButton.classList.add('counter-non-active');
+// Bind the resetCallback to the reset button click event
+reset.addEventListener('click', resetCallback, false); 
 
-  // Reset of buttons to be active 
-  firstButton.disabled = false; 
-  secondButton.disabled = false; 
-  thirdButton.disabled = false;  
-
-  // Reset to remove counter values
-  firstButton.nextSibling.innerHTML = '';
-  secondButton.nextSibling.innerHTML = '';
-  thirdButton.nextSibling.innerHTML = '';
-
-  firstButton.innerText = 'Click me';
-  secondButton.innerText = 'Click me';
-  thirdButton.innerText = 'Click me';
-
-}, false);

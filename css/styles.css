@@ -2,42 +2,33 @@
   display: block;
 }
 
-.setup {
-  margin-bottom: 5px;
-  display: inline;
-  margin-left: 10px;
+/* Base button styles - shared by all buttons */
+.button {
+  margin: 0 0 5px 10px;
   padding: 10px;
-  border: 1px solid;
+  border: 1px solid black;
   border-radius: 4px;
   text-transform: capitalize;
-} 
-
-#reset-button {
-  background-color: white;
-}
-
-#first-counter,
-#second-counter,
-#third-counter,
-#reset-button {
-  display: inline;
-  margin-left: 10px;
-}
-
-.counter-non-active {
-  background-color: yellow;
   color: black;
-  text-transform: capitalize;
+  background-color: yellow;
+}
+
+/* Button modifiers - to modify shared styles */
+.button:disabled {
+  background-color: red;
+  color: white;
 }
 
 .counter-active {
   background-color: blue;
   color: white;
-  text-transform: capitalize;
 }
 
-.counter-disabled {
-  background-color: red;
-  color: white;
-  text-transform: uppercase;
+.reset-button {
+  background-color: white;
+}
+
+/* Display/click counter */
+.display {
+  margin-left: 10px;
 }
