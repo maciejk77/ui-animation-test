@@ -10,6 +10,11 @@ The purpose of this exercise is to create **Sass** file which will output **CSS*
 - Delete file **css/item-list.css** and run ```gulp watch```  
 - Check CSS folder for Sass file being compiled to CSS
 
+###To be done
+
+- to be rewritten in modular JS, to much repetition on reset
+- to be rewritten in jQuery, simplifies DOM manipulation
+
 ####Preview
 
 ![sass-js-coding-test screenshot](https://github.com/maciejk77/sass-js-coding-test/blob/master/doc/screenshot.png?raw=true)
