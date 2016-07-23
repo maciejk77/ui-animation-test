@@ -4,35 +4,39 @@ var s,
 Button = {
 
   settings: {
-    // text: 'Click Here',
-    // state: 'non-active',
     clicks: 0,
-    clicksLimit: 10,
-    buttons: document.getElementsByClassName('button'),
-    resetBtn: document.getElementById('reset-button')
+    buttons: document.querySelectorAll(".js-button"),
+    displays: document.querySelectorAll(".js-display"),
+    reset: document.querySelector(".js-reset")
+
   },
 
   init: function() {
-    // some stuff
     s = this.settings;
-  },
+    buttons.forEach(function (button, index) {
 
-  bindUIActions: function() {
-    s.buttons.on('click', function() {
-      counter(s.buttons); // count clicks, change colors, text
-    }),
-      s.resetBtn.on('click', function() {
-      reset(s.resetBtn);
+      button.buttonIndex = index;
+      button.defaultText = button.innerText; 
+      button.clickCounter = 0;
+      button.clickLimit = parseInt(button.getAttribute("data-limit"));
+      button.addEventListener('click', clickCounter, false);
     })
   },
 
-  counter: function() {
-    s.clicks < s.clicksLimit ? s.clicks++ : s.clicks = 10
+  // bindEvent: function() {
+  //   console.log('bindEvent');
+  // },
+
+  clickCounter: function() {
+    // s.clicks < s.clicksLimit ? s.clicks++ : s.clicks = 5
+    console.log(s.clicks);
     console.log('Number of clicks ' + s.clicks);
-  },
-  
-  reset: function() {
-    s.clicks = 0;
-    console.log('Clicks now' + s.clicks);
   }
+  
+  // reset: function() {
+  //   s.clicks = 0;
+  //   console.log('Clicks now' + s.clicks);
+  // }
 };
+
+
