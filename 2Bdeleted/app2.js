@@ -1,20 +1,11 @@
+// Version to disable button if the amount on the button pressed is over the max limit, may continue with lower amount until max 100 is reached
+
 var targetFunds = 100;
 var totalFunds = 47;
 
 function clickCallback() {
   
-  if(totalFunds + this.amount < targetFunds) {
-    displayRemaining[0].innerHTML = 'You need ' + '&pound;' + (targetFunds - totalFunds) + ' more to reach your target';
-  
-  } else {
-    displayRemaining[0].innerHTML = totalFunds + this.amount + ' TARGET REACHED!';
-    
-    buttons.forEach(function(button, index) {
-      button.disabled = true;
-    });
-  }
-
-  totalFunds += this.amount;
+  totalFunds + this.amount <= targetFunds ? totalFunds += this.amount : this.disabled = true;
   display[0].innerText = totalFunds;
 
 };
@@ -22,7 +13,6 @@ function clickCallback() {
 // Get references to all DOM elements
 var buttons = document.querySelectorAll(".js-button");
 var display = document.querySelectorAll(".js-display");
-var displayRemaining = document.querySelectorAll(".js-display-remaining");
 
 // Iterate through list of buttons and initialise them with the needed values
 buttons.forEach(function (button, index) {
@@ -34,5 +24,3 @@ buttons.forEach(function (button, index) {
   button.addEventListener('click', clickCallback, false); 
 
 });
-
-

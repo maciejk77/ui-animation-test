@@ -1,5 +1,5 @@
-.layout-btn {
-  display: block;
+.layout-button {
+  display: inline;
 }
 
 /* Base button styles - shared by all buttons */
@@ -11,21 +11,6 @@
   text-transform: capitalize;
   color: black;
   background-color: yellow;
-}
-
-/* Button modifiers - to modify shared styles */
-.button:disabled {
-  background-color: red;
-  color: white;
-}
-
-.counter-active {
-  background-color: blue;
-  color: white;
-}
-
-.reset-button {
-  background-color: white;
 }
 
 /* Display/click counter */
