@@ -6,7 +6,11 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body onload="animateBar()">
+  <div class="meter animate">
+    <span><span></span></span> 
+  </div>
+
   <div class="layout-button">
     <button class="js-button button" data-value="1">&pound;1</button>
   </div>
@@ -24,12 +28,6 @@
   <div>
     <p class="js-display-remaining display"></p>
   </div>
-
-<div class="meter animate">
-  <span style="width: 50%"><span></span></span>
-</div>
-
-<progress value="47" max="100"></progress>
 
   <script src="app.js"></script>
 </body>
