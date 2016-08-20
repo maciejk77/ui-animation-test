@@ -1,62 +1,96 @@
-.layout-button {
+@import url('reset.css');
+
+.layout {
+  border: 5px solid lightgreen;
+  border-radius: 20px;
+  height: 30%;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.layout__title {
+  font-family: Verdana;
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+}
+
+.layout__message {
+  font-size: 20px;
+  font-family: Verdana;
+  margin: 0 auto 20px;
+  text-align: center;
+  width: 600px;
+}
+
+.layout__button-group {
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+}
+
+.layout__button {
   display: inline;
 }
 
-/* Base button styles - shared by all buttons */
+/* base button styles - shared by all buttons */
 .button {
   margin: 0 0 5px 10px;
+  width: 100px;
   padding: 10px;
-  border: 1px solid black;
-  border-radius: 4px;
+  border: 1px solid green;
+  border-radius: 2px;
   text-transform: capitalize;
   color: black;
   background-color: lightgreen;
+  font-size: 25px;
+  border-radius: 30px;
 }
 
-/* Display/click counter */
+/* display/counter */
 .display {
   margin-left: 10px;
 }
 
-.meter {
-  margin: 10px auto;
-  width: 50%;
-  margin-bottom: 10px; 
-  height: 15px;  /* Can be anything */
-  position: relative;
-  background: lightgreen;
-  border-radius: 25px;
-  padding: 7px;
-  box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+.counter {
+  background-color: green;
+  border-radius: 30px;
+  color: white;
+  display: inline;
+  font-family: Verdana;
+  font-size: 25px;
+  padding: 10px 30px;
 }
 
+/* bar formatting */
+.meter {
+  background: lightgreen;
+  border-radius: 25px;
+  box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+  float: left;
+  height: 15px; 
+  position: relative;
+  padding: 7px;
+  margin: 0 10px 10px 10px;
+  width: 80%;
+} 
+
 .meter > span {
-  display: block;
-  height: 100%;
+  animation: move 5s;
+  animation-fill-mode: forwards;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: rgb(43,194,83);
- /* background-image: linear-gradient(
-    center bottom,
-    rgb(43,194,83) 37%,
-    rgb(84,240,84) 69%
-  );
-  box-shadow: 
-    inset 0 2px 9px  rgba(255,255,255,0.3),
-    inset 0 -2px 6px rgba(0,0,0,0.4);*/
-  position: relative;
+  display: block;
+  height: 100%;
   overflow: hidden;
-
-  animation: move 5s;
-  animation-fill-mode: forwards;
+  position: relative;
 }
 
 .meter > span:after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  animation: move 2s linear infinite;
   background-image: linear-gradient(
     -45deg, 
     rgba(255, 255, 255, .2) 25%, 
@@ -67,13 +101,15 @@
     transparent 75%, 
     transparent
   );
-  z-index: 1;
   background-size: 50px 50px;
-  animation: move 2s linear infinite;
-  border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 8px;
+  content: "";
   overflow: hidden;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 1;
 }
 

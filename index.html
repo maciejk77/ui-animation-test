@@ -7,28 +7,41 @@
 </head>
 
 <body onload="animateBar()">
-  <div class="meter animate">
-    <span><span></span></span> 
+  <div class="layout"> 
+    
+    <div class="layout__title">
+      Fundraising Campaign
+    </div>
+
+    <div class="meter">
+      <span><span>
+    </div>
+
+    <div class="counter"></div>
+
+    <div class="layout__message">Add your donation</div>
+
+    <div class="layout__button-group">   
+      <div class="layout__button">
+        <button class="js-button button" data-value="1">&pound;1</button>
+      </div>
+
+      <div class="layout__button">
+        <button class="js-button button" data-value="5">&pound;5</button>
+      </div>
+
+      <div class="layout__button">
+        <button class="js-button button" data-value="10">&pound;10</button>
+      </div> 
+    </div>
+
+
+    <span class="js-display display"></span>
+
+    <div>
+      <p class="js-display-remaining display"></p>
+    </div>
   </div>
-
-  <div class="layout-button">
-    <button class="js-button button" data-value="1">&pound;1</button>
-  </div>
-
-  <div class="layout-button">
-    <button class="js-button button" data-value="5">&pound;5</button>
-  </div>
-
-  <div class="layout-button">
-    <button class="js-button button" data-value="10">&pound;10</button>
-  </div>
-
-  <span class="js-display display"></span>
-
-  <div>
-    <p class="js-display-remaining display"></p>
-  </div>
-
   <script src="app.js"></script>
 </body>
 

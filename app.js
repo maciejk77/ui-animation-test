@@ -22,7 +22,7 @@ function clickCallback() {
   }
 
   // Update display message with the accumulated amount
-  display[0].innerText = totalFunds;
+  display[0].innerHTML = '&pound;' + totalFunds;
   // Attach style set with procentage variable
   progress.setAttribute('style', procentage);
 
@@ -30,8 +30,8 @@ function clickCallback() {
 
 // Get references to all DOM elements
 var buttons = document.querySelectorAll(".js-button");
-var display = document.querySelectorAll(".js-display");
-var displayRemaining = document.querySelectorAll(".js-display-remaining");
+var display = document.querySelectorAll(".counter");
+var displayRemaining = document.querySelectorAll(".layout__message");
 var progress = document.querySelector(".meter > span");
 
 // Iterate through list of buttons and initialise them with the amounts
@@ -50,6 +50,7 @@ function animateBar() {
   
   setInterval(function() {
     if(position <= startFunds) { 
+      display[0].innerHTML = '&pound;' + totalFunds;
       procentage = 'width: ' + position + '%';
       progress.setAttribute('style', procentage);
       position++;
@@ -65,6 +66,14 @@ function disableButtons() {
 }
 
 
+// TO BE DONE 
+// Vertical align
+// Responsiveness
+// Class names more consistent
+// CSS review/simplification, a lot of repetition?
+// Add more effects (bonus)
+// JS code, too much repetition? initialisation/iteration over buttons just to attach amount?
+
 
 /* 
 
@@ -77,4 +86,5 @@ function clickCallback() {
   display[0].innerText = totalFunds;
 
 };
+
 */
