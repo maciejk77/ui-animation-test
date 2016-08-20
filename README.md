@@ -6,3 +6,8 @@
 - To add buttons for “£1”, “£5”, “£10” donations respectively.
 - To update UI once value changes
 - To turn this app into visually stunning component (bonus points)
+
+####Preview
+
+![ui-animation-test screenshot](https://github.com/maciejk77/ui-animation-test/blob/master/img/screenshot.png?raw=true)
+
