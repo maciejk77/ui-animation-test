@@ -11,3 +11,7 @@
 
 ![ui-animation-test screenshot](https://github.com/maciejk77/ui-animation-test/blob/master/img/screenshot.png?raw=true)
 
+![ui-animation-test screenshot2](https://github.com/maciejk77/ui-animation-test/blob/master/img/screenshot2.png?raw=true)
+
+
+
