@@ -66,14 +66,6 @@ function disableButtons() {
 }
 
 
-// TO BE DONE 
-// Vertical align
-// Responsiveness
-// Class names more consistent
-// CSS review/simplification, a lot of repetition?
-// Add more effects (bonus)
-// JS code, too much repetition? initialisation/iteration over buttons just to attach amount?
-
 
 /* 
 
