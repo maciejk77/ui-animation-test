@@ -1,4 +1,4 @@
-##Requirements:
+## Requirements:
 
 - To build an app as per wireframe provided
 - To position app vertically and horizontally centered.
@@ -7,7 +7,7 @@
 - To update UI once value changes
 - To turn this app into visually stunning component (bonus points)
 
-####Preview
+#### Preview
 
 ![ui-animation-test screenshot](https://github.com/maciejk77/ui-animation-test/blob/master/img/screenshot.png?raw=true)
 
